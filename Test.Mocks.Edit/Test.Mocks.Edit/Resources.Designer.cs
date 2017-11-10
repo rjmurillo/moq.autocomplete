@@ -62,29 +62,56 @@ namespace Test.Mocks.Edit {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Type names should be all uppercase..
+        ///   Looks up a localized string similar to Moq Callback() and Return() parameters must match the signature of the mocked method..
         /// </summary>
-        internal static string AnalyzerDescription {
+        internal static string MoqCompatibleArgumentTypeRuleDescription {
             get {
-                return ResourceManager.GetString("AnalyzerDescription", resourceCulture);
+                return ResourceManager.GetString("MoqCompatibleArgumentTypeRuleDescription", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Type name &apos;{0}&apos; contains lowercase letters.
+        ///   Looks up a localized string similar to Argument type does not match mocked method parameter..
         /// </summary>
-        internal static string AnalyzerMessageFormat {
+        internal static string MoqCompatibleArgumentTypeRuleMessageFormat {
             get {
-                return ResourceManager.GetString("AnalyzerMessageFormat", resourceCulture);
+                return ResourceManager.GetString("MoqCompatibleArgumentTypeRuleMessageFormat", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Type name contains lowercase letters.
+        ///   Looks up a localized string similar to Incompatible argument.
         /// </summary>
-        internal static string AnalyzerTitle {
+        internal static string MoqCompatibleArgumentTypeRuleTitle {
             get {
-                return ResourceManager.GetString("AnalyzerTitle", resourceCulture);
+                return ResourceManager.GetString("MoqCompatibleArgumentTypeRuleTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Moq Callback() and Return() parameters must match the signature of the mocked method..
+        /// </summary>
+        internal static string MoqRightNumberOfParametersRuleDescription {
+            get {
+                return ResourceManager.GetString("MoqRightNumberOfParametersRuleDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The number of parameters does not match the mocked method. Must be: {0}..
+        /// </summary>
+        internal static string MoqRightNumberOfParametersRuleMessageFormat {
+            get {
+                return ResourceManager.GetString("MoqRightNumberOfParametersRuleMessageFormat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The number of parameters does not match the mocked method.
+        /// </summary>
+        internal static string MoqRightNumberOfParametersRuleTitle {
+            get {
+                return ResourceManager.GetString("MoqRightNumberOfParametersRuleTitle", resourceCulture);
             }
         }
     }
