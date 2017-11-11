@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27004.2008
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test.Mocks.Edit", "Test.Mocks.Edit\Test.Mocks.Edit\Test.Mocks.Edit.csproj", "{A6BDFB24-A586-42F4-B6EE-24AF4432AA07}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test.Mocks.Edit", "Test.Mocks.Edit\Test.Mocks.Edit.csproj", "{A6BDFB24-A586-42F4-B6EE-24AF4432AA07}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test.Mocks.Edit.Test", "Test.Mocks.Edit\Test.Mocks.Edit.Test\Test.Mocks.Edit.Test.csproj", "{FC2E81E5-C83A-483F-8B55-401571A74E4C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test.Mocks.Edit.Test", "Test.Mocks.Edit.Test\Test.Mocks.Edit.Test.csproj", "{FC2E81E5-C83A-483F-8B55-401571A74E4C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test.Mocks.Edit.Vsix", "Test.Mocks.Edit\Test.Mocks.Edit.Vsix\Test.Mocks.Edit.Vsix.csproj", "{C70EF276-1E33-4686-9397-869797707294}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test.Mocks.Edit.Vsix", "Test.Mocks.Edit.Vsix\Test.Mocks.Edit.Vsix.csproj", "{C70EF276-1E33-4686-9397-869797707294}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
