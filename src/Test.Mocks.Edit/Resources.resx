@@ -134,11 +134,11 @@
     <comment>An optional longer localizable description of the diagnostic.</comment>
   </data>
   <data name="MoqRightNumberOfParametersRuleMessageFormat" xml:space="preserve">
-    <value>The number of parameters does not match the mocked method. Must be: {0}.</value>
+    <value>Mocked method has {0} parameters, but only {1} provided.</value>
     <comment>The format-able message the diagnostic displays.</comment>
   </data>
   <data name="MoqRightNumberOfParametersRuleTitle" xml:space="preserve">
-    <value>The number of parameters does not match the mocked method</value>
+    <value>Wrong number of parameters</value>
     <comment>The title of the diagnostic.</comment>
   </data>
 </root>

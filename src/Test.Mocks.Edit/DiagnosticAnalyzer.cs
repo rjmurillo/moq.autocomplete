@@ -66,7 +66,7 @@ namespace Test.Mocks.Edit
 
             if (mockedMethodArguments.Count != callbackOrReturnsMethodArguments.Count)
             {
-                var diagnostic = Diagnostic.Create(MoqRightNumberOfParametersRule, callbackOrReturnsInvocation.ArgumentList.GetLocation(), mockedMethodInvocation.ArgumentList.Arguments.Count);
+                var diagnostic = Diagnostic.Create(MoqRightNumberOfParametersRule, callbackOrReturnsInvocation.ArgumentList.GetLocation(), mockedMethodInvocation.ArgumentList.Arguments.Count, callbackOrReturnsMethodArguments.Count);
                 context.ReportDiagnostic(diagnostic);
             }
             else
