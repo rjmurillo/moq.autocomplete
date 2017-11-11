@@ -11,5 +11,9 @@ namespace Test.Mocks.Edit
     [ExportCompletionProvider(nameof(MoqIsAnyCompletionProvider), LanguageNames.CSharp)]
     public class MoqIsAnyCompletionProvider : CompletionProvider
     {
+        public override Task ProvideCompletionsAsync(CompletionContext context)
+        {
+            return Task.CompletedTask;
+        }
     }
 }

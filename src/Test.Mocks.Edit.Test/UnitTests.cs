@@ -1,19 +1,18 @@
 ﻿using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CodeFixes;
 using Microsoft.CodeAnalysis.Diagnostics;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using TestHelper;
 using Test.Mocks.Edit;
+using Xunit;
 
 namespace Test.Mocks.Edit.Test
 {
-    [TestClass]
     public class UnitTest : CodeFixVerifier
     {
 
         //No diagnostics expected to show up
-        [TestMethod]
+        [Fact]
         public void TestMethod1()
         {
             var test = @"";
@@ -22,7 +21,7 @@ namespace Test.Mocks.Edit.Test
         }
 
         //Diagnostic and CodeFix both triggered and checked for
-        [TestMethod]
+        [Fact]
         public void TestMethod2()
         {
             var test = @"
