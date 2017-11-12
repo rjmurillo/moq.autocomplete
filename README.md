@@ -2,7 +2,7 @@
 
 Visual Studio extension and Roslyn analyzer that helps to write unit tests using [Moq](https://github.com/moq/moq4) mocking library. Migration of [AgentZorge](https://github.com/Litee/AgentZorge) Resharper plugin to Roslyn.
 
-Currently works in Visual Studio 2017 only, does not work in VS 2015 and older.
+Works in Visual Studio 2017 only because in previous versions Roslyn completion service is not available.
 
 ## Supported features
 
@@ -16,5 +16,7 @@ Currently works in Visual Studio 2017 only, does not work in VS 2015 and older.
 
 ## How to install:
 
-* (Option 1) Install "Agent.Zorge.Moq" extension into Visual Studio - this way extension will work for all your projects. !!! Not available at the moment because of internal technical problem at Visual Studio Market !!!
-* (Option 2) Install "Agent.Zorge.Moq" NuGet package into test projects - this way extension will work for specific projects only
+* (Option 1) Install "Agent.Zorge.Moq" NuGet package into test projects. Con: Extension will work for specific projects only. Pro: It will be available for all project developers automatically.
+* (Option 2) Install "Agent.Zorge.Moq" extension into Visual Studio. Con: Every developer must install extension manually. Pro: It works for all your projects. 
+
+IMPORTANT: Installation via extension (option 2) is not working at the moment because of internal technical problem at Visual Studio Market web site

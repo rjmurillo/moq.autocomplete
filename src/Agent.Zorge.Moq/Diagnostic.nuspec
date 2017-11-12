@@ -9,7 +9,7 @@
     <licenseUrl>https://github.com/Litee/Agent.Zorge.Moq/blob/master/LICENSE</licenseUrl>
     <projectUrl>https://github.com/Litee/Agent.Zorge.Moq</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <description>Visual Studio extension and Roslyn analyzer that helps to write unit tests using Moq mocking library. Port of Resharper extension to Roslyn. Currently works in VS 2017 only.</description>
+    <description>Visual Studio extension and Roslyn analyzer that helps to write unit tests using Moq mocking library. Port of Resharper extension to Roslyn. Works in VS 2017 only.</description>
     <releaseNotes>First release: Highlights for bad callbacks, It.IsAny() is offered in completion popup.</releaseNotes>
     <copyright>2015-2017 Andrey Lipatkin</copyright>
     <tags>moq, mock, test, analyzer</tags>
