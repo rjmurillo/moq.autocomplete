@@ -18,7 +18,7 @@ Works in Visual Studio 2017 only because in previous versions Roslyn completion 
 
 ![](https://github.com/Litee/Agent.Zorge.Moq/blob/master/media/variable-name-suggestion.png)
 
-#### Moq: Suggest existing mocks if they are available, otherwise suggest *new Mock().Object*
+#### Moq: Suggest existing mocks into constructors
 
 ![](https://github.com/Litee/Agent.Zorge.Moq/blob/master/media/suggest-existing-mocks.png)
 
