@@ -43,6 +43,14 @@ namespace Agent.Zorge.Moq
                 .Where(t => t.FullSpan.Contains(currentPosition - 1))).FirstOrDefault();
         }
 
+        internal static SyntaxToken GetCurrentTypeArgumentList(SyntaxNode node, int currentPosition)
+        {
+            var allArgumentLists = node.DescendantNodes(n => n.FullSpan.Contains(currentPosition - 1)).OfType<TypeArgumentListSyntax>().OrderBy(n => n.FullSpan.Length);
+            return allArgumentLists.SelectMany(n => n.ChildTokens()
+                .Where(t => t.IsKind(SyntaxKind.GreaterThanToken))
+                .Where(t => t.FullSpan.Contains(currentPosition - 1))).FirstOrDefault();
+        }
+
         internal static bool IsCallbackOrReturnInvocation(SemanticModel semanticModel, InvocationExpressionSyntax callbackOrReturnsInvocation)
         {
             var callbackOrReturnsMethod = callbackOrReturnsInvocation.Expression as MemberAccessExpressionSyntax;

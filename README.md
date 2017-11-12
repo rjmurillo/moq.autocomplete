@@ -14,6 +14,10 @@ Works in Visual Studio 2017 only because in previous versions Roslyn completion 
 
 ![](https://github.com/Litee/Agent.Zorge.Moq/blob/master/media/suggest-callback-argument.png)
 
+#### Suggest variable names based on the name of mocked interface
+
+![](https://github.com/Litee/Agent.Zorge.Moq/blob/master/media/variable-name-suggestion.png)
+
 ### Highlight callbacks with invalid number of arguments or incompatible argument types
 
 ![](https://github.com/Litee/Agent.Zorge.Moq/blob/master/media/highlight-incompatible-callbacks.png)
