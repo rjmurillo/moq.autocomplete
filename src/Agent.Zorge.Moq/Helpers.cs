@@ -95,20 +95,25 @@ namespace Agent.Zorge.Moq
             var setupLambdaArgument = setupMethodInvocation?.ArgumentList.Arguments[0]?.Expression as LambdaExpressionSyntax;
             var mockedMethodInvocation = setupLambdaArgument?.Body as InvocationExpressionSyntax;
 
-            var matchingMockedMethods = new List<IMethodSymbol>();
-            if (mockedMethodInvocation != null)
+            return GetAllMatchingSymbols<IMethodSymbol>(semanticModel, mockedMethodInvocation);
+        }
+
+        internal static IEnumerable<T> GetAllMatchingSymbols<T>(SemanticModel semanticModel, ExpressionSyntax expression) where T: class
+        {
+            var matchingSymbols = new List<T>();
+            if (expression != null)
             {
-                var mockedMethodsSymbolInfo = semanticModel.GetSymbolInfo(mockedMethodInvocation.Expression);
-                if (mockedMethodsSymbolInfo.CandidateReason == CandidateReason.None && mockedMethodsSymbolInfo.Symbol is IMethodSymbol)
+                var symbolInfo = semanticModel.GetSymbolInfo(expression);
+                if (symbolInfo.CandidateReason == CandidateReason.None && symbolInfo.Symbol is T)
                 {
-                    matchingMockedMethods.Add(mockedMethodsSymbolInfo.Symbol as IMethodSymbol);
+                    matchingSymbols.Add(symbolInfo.Symbol as T);
                 }
-                else if (mockedMethodsSymbolInfo.CandidateReason == CandidateReason.OverloadResolutionFailure)
+                else if (symbolInfo.CandidateReason == CandidateReason.OverloadResolutionFailure)
                 {
-                    matchingMockedMethods.AddRange(mockedMethodsSymbolInfo.CandidateSymbols.OfType<IMethodSymbol>());
+                    matchingSymbols.AddRange(symbolInfo.CandidateSymbols.OfType<T>());
                 }
             }
-            return matchingMockedMethods;
+            return matchingSymbols;
         }
 
         internal static InvocationExpressionSyntax FindMockedMethodInvocationFromSetupMethod(SemanticModel semanticModel, InvocationExpressionSyntax setupInvocation)

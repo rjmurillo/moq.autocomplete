@@ -18,6 +18,11 @@ Works in Visual Studio 2017 only because in previous versions Roslyn completion 
 
 ![](https://github.com/Litee/Agent.Zorge.Moq/blob/master/media/variable-name-suggestion.png)
 
+#### Moq: Suggest existing mocks if they are available, otherwise suggest *new Mock().Object*
+
+![](https://github.com/Litee/Agent.Zorge.Moq/blob/master/media/suggest-existing-mocks.png)
+
+
 ### Highlight callbacks with invalid number of arguments or incompatible argument types
 
 ![](https://github.com/Litee/Agent.Zorge.Moq/blob/master/media/highlight-incompatible-callbacks.png)
