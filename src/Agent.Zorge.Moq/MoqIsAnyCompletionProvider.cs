@@ -9,7 +9,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
-namespace Test.Mocks.Edit
+namespace Agent.Zorge.Moq
 {
     [ExportCompletionProvider(nameof(MoqIsAnyCompletionProvider), LanguageNames.CSharp)]
     public class MoqIsAnyCompletionProvider : CompletionProvider

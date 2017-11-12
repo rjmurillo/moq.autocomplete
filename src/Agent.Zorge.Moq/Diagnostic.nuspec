@@ -1,19 +1,18 @@
 ﻿<?xml version="1.0"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
   <metadata>
-    <id>Test.Mocks.Edit</id>
+    <id>Agent.Zorge.Moq</id>
     <version>1.0.0.0</version>
-    <title>Test.Mocks.Edit</title>
-    <authors>Andrey</authors>
-    <owners>Andrey</owners>
-    <licenseUrl>http://LICENSE_URL_HERE_OR_DELETE_THIS_LINE</licenseUrl>
-    <projectUrl>http://PROJECT_URL_HERE_OR_DELETE_THIS_LINE</projectUrl>
-    <iconUrl>http://ICON_URL_HERE_OR_DELETE_THIS_LINE</iconUrl>
+    <title>Agent.Zorge.Moq</title>
+    <authors>Andrey "Litee" Lipatkin</authors>
+    <owners>Andrey "Litee" Lipatkin</owners>
+    <licenseUrl>https://github.com/Litee/Agent.Zorge.Moq/blob/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/Litee/Agent.Zorge.Moq</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <description>Test.Mocks.Edit</description>
-    <releaseNotes>Summary of changes made in this release of the package.</releaseNotes>
-    <copyright>Copyright</copyright>
-    <tags>Test.Mocks.Edit, analyzers</tags>
+    <description>Visual Studio extension and Roslyn analyzer that helps to write unit tests using Moq mocking library. Port of Resharper extension to Roslyn.</description>
+    <releaseNotes>First release: Highlights for bad callbacks, It.IsAny() is offered in completion popup.</releaseNotes>
+    <copyright>2015-2017 Andrey Lipatkin</copyright>
+    <tags>moq, mock, test, analyzer</tags>
     <frameworkAssemblies>
       <frameworkAssembly assemblyName="System" targetFramework="" />
     </frameworkAssemblies>

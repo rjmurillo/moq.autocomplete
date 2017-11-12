@@ -1,19 +1,15 @@
-using System;
-using System.Collections.Generic;
 using System.Collections.Immutable;
-using System.Linq;
-using System.Threading;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Microsoft.CodeAnalysis.Diagnostics;
 
-namespace Test.Mocks.Edit
+namespace Agent.Zorge.Moq
 {
     [DiagnosticAnalyzer(LanguageNames.CSharp)]
-    public class TestMocksEditAnalyzer : DiagnosticAnalyzer
+    public class MoqCallbacksAnalyzer : DiagnosticAnalyzer
     {
-        public const string DiagnosticId = "TestMocksEdit";
+        public const string DiagnosticId = "MoqCallbacksAnalyzer";
 
         private static readonly LocalizableString MoqRightNumberOfParametersRuleTitle = new LocalizableResourceString(nameof(Resources.MoqRightNumberOfParametersRuleTitle), Resources.ResourceManager, typeof(Resources));
         private static readonly LocalizableString MoqRightNumberOfParametersRuleMessageFormat = new LocalizableResourceString(nameof(Resources.MoqRightNumberOfParametersRuleMessageFormat), Resources.ResourceManager, typeof(Resources));

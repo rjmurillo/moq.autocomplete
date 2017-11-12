@@ -34,8 +34,8 @@
     <ProjectGuid>{C70EF276-1E33-4686-9397-869797707294}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Test.Mocks.Edit.Vsix</RootNamespace>
-    <AssemblyName>Test.Mocks.Edit.Vsix</AssemblyName>
+    <RootNamespace>Agent.Zorge.Moq.Vsix</RootNamespace>
+    <AssemblyName>Agent.Zorge.Moq.Vsix</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <GeneratePkgDefFile>false</GeneratePkgDefFile>
     <IncludeAssemblyInVSIXContainer>false</IncludeAssemblyInVSIXContainer>
@@ -73,9 +73,9 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Test.Mocks.Edit\Test.Mocks.Edit.csproj">
+    <ProjectReference Include="..\Agent.Zorge.Moq\Agent.Zorge.Moq.csproj">
       <Project>{A6BDFB24-A586-42F4-B6EE-24AF4432AA07}</Project>
-      <Name>Test.Mocks.Edit</Name>
+      <Name>Agent.Zorge.Moq</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

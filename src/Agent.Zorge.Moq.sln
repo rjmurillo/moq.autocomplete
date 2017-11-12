@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27004.2008
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Test.Mocks.Edit", "Test.Mocks.Edit\Test.Mocks.Edit.csproj", "{A6BDFB24-A586-42F4-B6EE-24AF4432AA07}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Agent.Zorge.Moq", "Agent.Zorge.Moq\Agent.Zorge.Moq.csproj", "{A6BDFB24-A586-42F4-B6EE-24AF4432AA07}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test.Mocks.Edit.Vsix", "Test.Mocks.Edit.Vsix\Test.Mocks.Edit.Vsix.csproj", "{C70EF276-1E33-4686-9397-869797707294}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Agent.Zorge.Moq.Vsix", "Agent.Zorge.Moq.Vsix\Agent.Zorge.Moq.Vsix.csproj", "{C70EF276-1E33-4686-9397-869797707294}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
