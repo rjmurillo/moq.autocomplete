@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
   <metadata>
     <id>Agent.Zorge.Moq</id>
-    <version>0.0.2</version>
+    <version>0.0.3</version>
     <title>Agent.Zorge.Moq</title>
     <authors>Andrey "Litee" Lipatkin</authors>
     <owners>Andrey "Litee" Lipatkin</owners>
@@ -10,7 +10,7 @@
     <projectUrl>https://github.com/Litee/Agent.Zorge.Moq</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Visual Studio extension and Roslyn analyzer that helps to write unit tests using Moq mocking library. Port of Resharper extension to Roslyn. Works in VS 2017 only.</description>
-    <releaseNotes>First release: Highlights for bad callbacks, It.IsAny() is offered in completion popup.</releaseNotes>
+    <releaseNotes>Generate lambdas for Callback() and Returns() methods.</releaseNotes>
     <copyright>2015-2017 Andrey Lipatkin</copyright>
     <tags>moq, mock, test, analyzer</tags>
     <frameworkAssemblies>
