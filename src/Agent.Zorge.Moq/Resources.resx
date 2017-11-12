@@ -122,7 +122,7 @@
     <comment>An optional longer localizable description of the diagnostic.</comment>
   </data>
   <data name="MoqCompatibleArgumentTypeRuleMessageFormat" xml:space="preserve">
-    <value>Argument type does not match mocked method parameter.</value>
+    <value>Argument type does not match mocked method parameter</value>
     <comment>The format-able message the diagnostic displays.</comment>
   </data>
   <data name="MoqCompatibleArgumentTypeRuleTitle" xml:space="preserve">

@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
     <Metadata>
-        <Identity Id="Agent.Zorge.Moq..7b6cc72a-fac5-4f33-a8c5-b665824494a0" Version="0.0.1" Language="en-US" Publisher="Andrey"/>
+        <Identity Id="Agent.Zorge.Moq..7b6cc72a-fac5-4f33-a8c5-b665824494a0" Version="0.0.2" Language="en-US" Publisher="Andrey"/>
         <DisplayName>Agent.Zorge.Moq</DisplayName>
-        <Description xml:space="preserve">Visual Studio extension and Roslyn analyzer that helps to write unit tests using Moq mocking library. Port of Resharper extension to Roslyn.</Description>
+        <Description xml:space="preserve">Visual Studio extension and Roslyn analyzer that helps to write unit tests using Moq mocking library. Port of Resharper extension to Roslyn. Currently works in VS 2017 only.</Description>
         <MoreInfo>https://github.com/Litee/Agent.Zorge.Moq</MoreInfo>
         <License>https://github.com/Litee/Agent.Zorge.Moq/blob/master/LICENSE</License>
         <ReleaseNotes>First release: Highlights for bad callbacks, It.IsAny() is offered in completion popup.</ReleaseNotes>
