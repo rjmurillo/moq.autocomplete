@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="MoqCompatibleArgumentTypeRuleDescription" xml:space="preserve">
-    <value>Moq Callback() and Return() parameters must match the signature of the mocked method.</value>
+    <value>Moq Callback() and Return() lambdas must match the signature of the mocked method.</value>
     <comment>An optional longer localizable description of the diagnostic.</comment>
   </data>
   <data name="MoqCompatibleArgumentTypeRuleMessageFormat" xml:space="preserve">
@@ -126,19 +126,19 @@
     <comment>The format-able message the diagnostic displays.</comment>
   </data>
   <data name="MoqCompatibleArgumentTypeRuleTitle" xml:space="preserve">
-    <value>Incompatible argument</value>
+    <value>Moq: Incompatible callback argument</value>
     <comment>The title of the diagnostic.</comment>
   </data>
   <data name="MoqRightNumberOfParametersRuleDescription" xml:space="preserve">
-    <value>Moq Callback() and Return() parameters must match the signature of the mocked method.</value>
+    <value>Moq Callback() and Return() lambdas must match the signature of the mocked method.</value>
     <comment>An optional longer localizable description of the diagnostic.</comment>
   </data>
   <data name="MoqRightNumberOfParametersRuleMessageFormat" xml:space="preserve">
-    <value>Mocked method has {0} parameters, but only {1} provided.</value>
+    <value>Invalid number of parameters in callback. Expected: {0}. Found: {1}.</value>
     <comment>The format-able message the diagnostic displays.</comment>
   </data>
   <data name="MoqRightNumberOfParametersRuleTitle" xml:space="preserve">
-    <value>Wrong number of parameters</value>
+    <value>Moq: Wrong number of callback parameters</value>
     <comment>The title of the diagnostic.</comment>
   </data>
 </root>
