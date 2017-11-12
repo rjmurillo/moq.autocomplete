@@ -33,34 +33,29 @@ namespace Agent.Zorge.Moq
         {
 
             var callbackOrReturnsInvocation = (InvocationExpressionSyntax)context.Node;
-            // Ignoring Callback() and Return() calls without lambda arguments
-            if (callbackOrReturnsInvocation.ArgumentList.Arguments.Count == 0) return;
 
-            var callbackOrReturnsMethod = callbackOrReturnsInvocation.Expression as MemberAccessExpressionSyntax;
-            var methodName = callbackOrReturnsMethod?.Name.ToString();
-            if (methodName != "Callback" && methodName != "Returns") return;
+            var callbackOrReturnsMethodArguments = callbackOrReturnsInvocation.ArgumentList.Arguments;
+            // Ignoring Callback() and Return() calls without lambda arguments
+            if (callbackOrReturnsMethodArguments.Count == 0) return;
+
+            if (!Helpers.IsCallbackOrReturnInvocation(context.SemanticModel, callbackOrReturnsInvocation)) return;
+
+            var callbackLambda = callbackOrReturnsInvocation.ArgumentList.Arguments[0]?.Expression as ParenthesizedLambdaExpressionSyntax;
+            
+            // Ignoring callbacks without lambda
+            if (callbackLambda == null) return;
 
             // Ignoring calls with no arguments because those are valid in Moq
-            var callbackOrReturnsArgument = callbackOrReturnsInvocation.ArgumentList.Arguments[0]?.Expression as ParenthesizedLambdaExpressionSyntax;
-            if (callbackOrReturnsArgument == null) return;
-            if (callbackOrReturnsArgument.ParameterList.Parameters.Count == 0) return;
+            var lambdaParameters = callbackLambda.ParameterList.Parameters;
+            if (lambdaParameters.Count == 0) return;
 
-            var callbackOrReturnsMethodSymbol = context.SemanticModel.GetSymbolInfo(callbackOrReturnsMethod).Symbol as IMethodSymbol;
-            if (callbackOrReturnsMethodSymbol == null) return;
-            var callbackOrReturnsMethodName = callbackOrReturnsMethodSymbol.ToString();
-            if (!callbackOrReturnsMethodName.StartsWith("Moq.Language.ICallback") && !callbackOrReturnsMethodName.StartsWith("Moq.Language.IReturns")) return; // TODO: Make more elegant
-            var callbackOrReturnsMethodArguments = callbackOrReturnsInvocation.ArgumentList.Arguments;
+            var setupInvocation = Helpers.FindSetupMethodFromCallbackInvocation(context.SemanticModel, callbackOrReturnsInvocation);
+            var mockedMethodInvocation = Helpers.FindMockedMethodInvocationFromSetupMethod(context.SemanticModel, setupInvocation);
+            if (mockedMethodInvocation == null) return;
 
-            var setupInvocation = FindSetupMethod(callbackOrReturnsMethod.Expression);
-            if (setupInvocation == null) return;
-
-            var setupLambdaArgument = setupInvocation.ArgumentList.Arguments[0]?.Expression as LambdaExpressionSyntax;
-            if (setupLambdaArgument == null) return;
-
-            var mockedMethodInvocation = setupLambdaArgument.Body as InvocationExpressionSyntax;
             var mockedMethodArguments = mockedMethodInvocation.ArgumentList.Arguments;
 
-            if (mockedMethodArguments.Count != callbackOrReturnsMethodArguments.Count)
+            if (mockedMethodArguments.Count != lambdaParameters.Count)
             {
                 var diagnostic = Diagnostic.Create(CallbackArgumentsNumberRule, callbackOrReturnsInvocation.ArgumentList.GetLocation(), mockedMethodInvocation.ArgumentList.Arguments.Count, callbackOrReturnsMethodArguments.Count);
                 context.ReportDiagnostic(diagnostic);
@@ -70,25 +65,16 @@ namespace Agent.Zorge.Moq
                 for (int i = 0; i < mockedMethodArguments.Count; i++)
                 {
                     var mockedMethodArgumentType = context.SemanticModel.GetTypeInfo(mockedMethodArguments[i].Expression);
-                    var callbackMethodArgumentType = context.SemanticModel.GetTypeInfo(callbackOrReturnsMethodArguments[i].Expression);
-                    if (mockedMethodArgumentType.ConvertedType != callbackMethodArgumentType.ConvertedType)
+                    var lambdaParameterType = context.SemanticModel.GetTypeInfo(lambdaParameters[i].Type);
+                    string mockedMethodTypeName = mockedMethodArgumentType.ConvertedType.ToString();
+                    string lambdaParameterTypeName = lambdaParameterType.ConvertedType.ToString();
+                    if (mockedMethodTypeName != lambdaParameterTypeName)
                     {
-                        var diagnostic = Diagnostic.Create(CallbackArgumentTypesRule, callbackOrReturnsMethodArguments[i].Expression.GetLocation());
+                        var diagnostic = Diagnostic.Create(CallbackArgumentTypesRule, lambdaParameters[i].Type.GetLocation());
                         context.ReportDiagnostic(diagnostic);
                     }
                 }
             }
         }
-
-        private static InvocationExpressionSyntax FindSetupMethod(ExpressionSyntax expression)
-        {
-            var invocation = expression as InvocationExpressionSyntax;
-            var method = invocation?.Expression as MemberAccessExpressionSyntax;
-            if (method == null) return null;
-            var methodName = method?.Name.ToString();
-            if (methodName == "Setup") return invocation;
-            return FindSetupMethod(method.Expression);
-        }
-
     }
 }

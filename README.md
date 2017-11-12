@@ -10,6 +10,10 @@ Works in Visual Studio 2017 only because in previous versions Roslyn completion 
 
 ![](https://github.com/Litee/Agent.Zorge.Moq/blob/master/media/suggest-isany-argument.png)
 
+#### Generate lambdas for Callback() and Returns() methods
+
+![](https://github.com/Litee/Agent.Zorge.Moq/blob/master/media/suggest-callback-argument.png)
+
 ### Highlight callbacks with invalid number of arguments or incompatible argument types
 
 ![](https://github.com/Litee/Agent.Zorge.Moq/blob/master/media/highlight-incompatible-callbacks.png)
@@ -17,6 +21,4 @@ Works in Visual Studio 2017 only because in previous versions Roslyn completion 
 ## How to install:
 
 * (Option 1) Install "Agent.Zorge.Moq" NuGet package into test projects. Con: Extension will work for specific projects only. Pro: It will be available for all project developers automatically.
-* (Option 2) Install "Agent.Zorge.Moq" extension into Visual Studio. Con: Every developer must install extension manually. Pro: It works for all your projects. 
-
-IMPORTANT: Installation via extension (option 2) is not working at the moment because of internal technical problem at Visual Studio Market web site
+* (Option 2) Install "Agent.Zorge.Moq" extension into Visual Studio. Con: Every developer must install extension manually. Pro: It works for all your projects. *Option is temporary unavailable because of problems at Visual Studio Market web site.*
