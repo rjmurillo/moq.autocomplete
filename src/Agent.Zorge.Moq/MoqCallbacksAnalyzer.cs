@@ -9,18 +9,12 @@ namespace Agent.Zorge.Moq
     [DiagnosticAnalyzer(LanguageNames.CSharp)]
     public class MoqCallbacksAnalyzer : DiagnosticAnalyzer
     {
-        private static readonly LocalizableString MoqRightNumberOfParametersRuleTitle = new LocalizableResourceString(nameof(Resources.MoqRightNumberOfParametersRuleTitle), Resources.ResourceManager, typeof(Resources));
-        private static readonly LocalizableString MoqRightNumberOfParametersRuleMessageFormat = new LocalizableResourceString(nameof(Resources.MoqRightNumberOfParametersRuleMessageFormat), Resources.ResourceManager, typeof(Resources));
-        private static readonly LocalizableString MoqRightNumberOfParametersRuleDescription = new LocalizableResourceString(nameof(Resources.MoqRightNumberOfParametersRuleDescription), Resources.ResourceManager, typeof(Resources));
-
-        private static readonly LocalizableString MoqCompatibleArgumentTypeRuleTitle = new LocalizableResourceString(nameof(Resources.MoqCompatibleArgumentTypeRuleTitle), Resources.ResourceManager, typeof(Resources));
-        private static readonly LocalizableString MoqCompatibleArgumentTypeRuleDescription = new LocalizableResourceString(nameof(Resources.MoqCompatibleArgumentTypeRuleDescription), Resources.ResourceManager, typeof(Resources));
-        private static readonly LocalizableString MoqCompatibleArgumentTypeRuleMessageFormat = new LocalizableResourceString(nameof(Resources.MoqCompatibleArgumentTypeRuleMessageFormat), Resources.ResourceManager, typeof(Resources));
-
         private const string Category = "Moq";
 
-        private static DiagnosticDescriptor CallbackArgumentsNumberRule = new DiagnosticDescriptor("AZM0001", MoqRightNumberOfParametersRuleTitle, MoqRightNumberOfParametersRuleMessageFormat, Category, DiagnosticSeverity.Warning, isEnabledByDefault: true);
-        private static DiagnosticDescriptor CallbackArgumentTypesRule = new DiagnosticDescriptor("AZM0002", MoqCompatibleArgumentTypeRuleTitle, MoqCompatibleArgumentTypeRuleMessageFormat, Category, DiagnosticSeverity.Warning, isEnabledByDefault: true);
+        private static DiagnosticDescriptor CallbackArgumentsNumberRule = new DiagnosticDescriptor("Moq1001", 
+            "Moq: Wrong number of callback parameters", "Invalid number of parameters in callback. Expected: {0}. Found: {1}.", Category, DiagnosticSeverity.Warning, isEnabledByDefault: true);
+        private static DiagnosticDescriptor CallbackArgumentTypesRule = new DiagnosticDescriptor("Moq1002", 
+            "Moq: Incompatible callback argument", "Argument type does not match mocked method parameter", Category, DiagnosticSeverity.Warning, isEnabledByDefault: true);
 
         public override ImmutableArray<DiagnosticDescriptor> SupportedDiagnostics { get { return ImmutableArray.Create(CallbackArgumentsNumberRule, CallbackArgumentTypesRule); } }
 
