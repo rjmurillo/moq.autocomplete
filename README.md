@@ -4,7 +4,7 @@ Visual Studio extension and Roslyn analyzer that helps to write unit tests using
 
 Works in Visual Studio 2017 only because in previous versions Roslyn completion service is not available.
 
-Can be used in combination with [moq.analyzers](https://github.com/Litee/moq4.analyzers)
+Note: moq.autocomplete can be used in combination with [moq.analyzers](https://github.com/Litee/moq4.analyzers), which provide highlights and quick fixes for many typical problems.
 
 ## Supported features
 
@@ -20,11 +20,11 @@ Can be used in combination with [moq.analyzers](https://github.com/Litee/moq4.an
 
 ![](https://github.com/Litee/moq.autocomplete/blob/master/media/variable-name-suggestion.png)
 
-#### Moq: Suggest existing mocks into constructors
+#### Suggest existing mocks into constructors
 
 ![](https://github.com/Litee/moq.autocomplete/blob/master/media/suggest-existing-mocks.png)
 
 ## How to install:
 
-* (Option 1) Install "moq.autocomplete" NuGet package into test projects. Con: Extension will work for specific projects only. Pro: It will be available for all project developers automatically.
-* (Option 2) Install "moq.autocomplete" extension into Visual Studio. Con: Every developer must install extension manually. Pro: It works for all your projects. *Option is temporary unavailable because of problems at Visual Studio Market web site.*
+* (Option 1) Install "Moq.Autocomplete" NuGet package into test projects. Con: Extension will work for specific projects only. Pro: It will be available for all project developers automatically.
+* (Option 2) Install "Moq.Autocomplete" extension into Visual Studio. Con: Every developer must install extension manually. Pro: It works for all your projects.
