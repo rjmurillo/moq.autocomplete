@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
   <metadata>
     <id>Moq.Autocomplete</id>
-    <version>0.0.5</version>
+    <version>0.0.1</version>
     <title>Moq.Autocomplete</title>
     <authors>Andrey "Litee" Lipatkin</authors>
     <owners>Andrey "Litee" Lipatkin</owners>
@@ -12,7 +12,7 @@
     <description>Visual Studio extension and Roslyn analyzer that helps to write unit tests using Moq mocking library. Port of Resharper extension to Roslyn. Works in VS 2017 only.</description>
     <releaseNotes></releaseNotes>
     <copyright>2015-2017 Andrey Lipatkin</copyright>
-    <tags>moq, mock, test, analyzer</tags>
+    <tags>moq, mock, test</tags>
     <frameworkAssemblies>
       <frameworkAssembly assemblyName="System" targetFramework="" />
     </frameworkAssemblies>

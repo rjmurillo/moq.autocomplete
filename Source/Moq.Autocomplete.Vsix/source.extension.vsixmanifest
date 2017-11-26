@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
     <Metadata>
-        <Identity Id="Moq.Autocomplete..7b6cc72a-fac5-4f33-a8c5-b665824494a0" Version="0.0.5" Language="en-US" Publisher="Andrey"/>
+        <Identity Id="Moq.Autocomplete..7b6cc72a-fac5-4f33-a8c5-b665824494a0" Version="0.0.1" Language="en-US" Publisher="Andrey"/>
         <DisplayName>Moq.Autocomplete</DisplayName>
         <Description xml:space="preserve">Visual Studio extension and Roslyn analyzer that helps to write unit tests using Moq mocking library. Port of Resharper extension to Roslyn. Works in VS 2017 only.</Description>
         <MoreInfo>https://github.com/Litee/moq.autocomplete</MoreInfo>
