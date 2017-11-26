@@ -3,8 +3,9 @@
     <Metadata>
         <Identity Id="Moq.Autocomplete..7b6cc72a-fac5-4f33-a8c5-b665824494a0" Version="0.0.1" Language="en-US" Publisher="Andrey"/>
         <DisplayName>Moq.Autocomplete</DisplayName>
-        <Description xml:space="preserve">Visual Studio extension and Roslyn analyzer that helps to write unit tests using Moq mocking library. Port of Resharper extension to Roslyn. Works in VS 2017 only.</Description>
+        <Description xml:space="preserve">Visual Studio extension that provides helpful autocomplets when using Moq mocking library. Port of Resharper extension to Roslyn. NOTE: Works in VS 2017 only because plugin uses the latest Roslyn Autocomplete API.</Description>
         <MoreInfo>https://github.com/Litee/moq.autocomplete</MoreInfo>
+        <License>LICENSE</License>
         <Tags>moq, mock, test</Tags>
     </Metadata>
     <Installation>
