@@ -46,20 +46,30 @@ namespace Agent.Zorge.Moq
                     // TODO Narrow the list of matching signatures if some arguments are already provided
                     foreach (IMethodSymbol matchingMockedMethodSymbol in matchingMockedMethods.Where(m => m.Parameters.Any()))
                     {
-                        // Generate It.IsAny<>() for the whole signature if we are within first argument
+                        // We are at first argument
                         if (tokenAtCursor.IsKind(SyntaxKind.OpenParenToken))
                         {
+                            // Generate It.IsAny<>() for the whole signature if we are within first argument
                             var fullMethodHelper = string.Join(", ", matchingMockedMethodSymbol.Parameters.Select(p => "It.IsAny<" + p.Type.ToMinimalDisplayString(semanticModel, mockedMethodArgumentList.SpanStart) + ">()"));
                             context.AddItem(CompletionItem.Create(fullMethodHelper, rules: _preselectCompletionRules));
+                            // There are more than one argument so suggest completion for first argument only too
+                            if (matchingMockedMethodSymbol.Parameters.Length > 1)
+                            {
+                                var oneArgumentHelper = "It.IsAny<" + matchingMockedMethodSymbol.Parameters[0].Type.ToMinimalDisplayString(semanticModel, mockedMethodArgumentList.SpanStart) + ">()";
+                                context.AddItem(CompletionItem.Create(oneArgumentHelper, rules: _standardCompletionRules));
+                            }
                         }
-
-                        // Generate It.IsAny<>() for current argument
-                        var allCommaTokens = mockedMethodArgumentList.ChildTokens().Where(t => t.IsKind(SyntaxKind.CommaToken)).ToList();
-                        int paramIdx = tokenAtCursor.IsKind(SyntaxKind.CommaToken) ? allCommaTokens.IndexOf(tokenAtCursor) + 1 : 0;
-                        if (matchingMockedMethodSymbol.Parameters.Length > paramIdx)
+                        // We are at second+ argument
+                        else
                         {
-                            var oneArgumentHelper = "It.IsAny<" + matchingMockedMethodSymbol.Parameters[paramIdx].Type.ToMinimalDisplayString(semanticModel, mockedMethodArgumentList.SpanStart) + ">()";
-                            context.AddItem(CompletionItem.Create(oneArgumentHelper, rules: _standardCompletionRules));
+                            // Generate It.IsAny<>() for single argument
+                            var allCommaTokens = mockedMethodArgumentList.ChildTokens().Where(t => t.IsKind(SyntaxKind.CommaToken)).ToList();
+                            int paramIdx = allCommaTokens.IndexOf(tokenAtCursor) + 1;
+                            if (matchingMockedMethodSymbol.Parameters.Length > paramIdx)
+                            {
+                                var oneArgumentHelper = "It.IsAny<" + matchingMockedMethodSymbol.Parameters[paramIdx].Type.ToMinimalDisplayString(semanticModel, mockedMethodArgumentList.SpanStart) + ">()";
+                                context.AddItem(CompletionItem.Create(oneArgumentHelper, rules: _standardCompletionRules));
+                            }
                         }
                     }
                 }
