@@ -1,4 +1,4 @@
-# moq.autocomplete
+# Moq.Autocomplete
 
 Visual Studio extension and Roslyn analyzer that helps to write unit tests using [Moq](https://github.com/moq/moq4) mocking library. Migration of [AgentZorge](https://github.com/Litee/AgentZorge) Resharper plugin to Roslyn.
 
