@@ -1,12 +1,25 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard1.3</TargetFramework>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <AssemblyVersion>0.0.2.0</AssemblyVersion>
+    <FileVersion>0.0.2.0</FileVersion>
+    <Version>0.0.2</Version>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Authors>Andrey "Litee" Lipatkin</Authors>
+    <Product />
+    <Description>Roslyn plugin that provides helpful autocomplets when using Moq mocking library. Port of a Resharper extension to Roslyn.</Description>
+    <Copyright>2015-2019 Andrey Lipatkin</Copyright>
+    <PackageLicenseExpression>https://github.com/Litee/moq.autocomplete/blob/master/LICENSE</PackageLicenseExpression>
+    <PackageProjectUrl>https://github.com/Litee/moq.autocomplete</PackageProjectUrl>
+    <PackageTags>moq, mock, test, autocomplete</PackageTags>
+    <RepositoryUrl>https://github.com/Litee/moq.autocomplete</RepositoryUrl>
+    <PackageReleaseNotes>Upgraded to support Visual Studio 2019</PackageReleaseNotes>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="2.4.0" />
-    <PackageReference Include="Microsoft.CodeAnalysis.Features" Version="2.4.0" />
+    <PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="3.1.0" />
+    <PackageReference Include="Microsoft.CodeAnalysis.Features" Version="3.1.0" />
     <PackageReference Include="Microsoft.Composition" Version="1.0.31" />
   </ItemGroup>
 

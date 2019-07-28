@@ -26,5 +26,5 @@ Note: moq.autocomplete can be used in combination with [moq.analyzers](https://g
 
 ## How to install:
 
-* (Option 1) Install "Moq.Autocomplete" NuGet package into test projects. Con: Extension will work for specific projects only. Pro: It will be available for all project developers automatically.
-* (Option 2) Install "Moq.Autocomplete" extension into Visual Studio. Con: Every developer must install extension manually. Pro: It works for all your projects.
+* Install "Moq.Autocomplete" extension from Visual Studio Marketplace.
+
