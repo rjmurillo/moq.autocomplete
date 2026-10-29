@@ -35,7 +35,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Moq.Autocomplete\Moq.Autocomplete.csproj" />
+    <!-- The VSIX manifest finds this project by its Name metadata. -->
+    <ProjectReference Include="..\Moq.Autocomplete\Moq.Autocomplete.csproj">
+      <Name>Moq.Autocomplete</Name>
+    </ProjectReference>
   </ItemGroup>
 
   <Import Project="Sdk.targets" Sdk="Microsoft.NET.Sdk" />
