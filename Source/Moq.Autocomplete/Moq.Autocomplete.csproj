@@ -10,7 +10,7 @@
     <Product />
     <Description>Roslyn plugin that provides helpful autocomplets when using Moq mocking library. Port of a Resharper extension to Roslyn.</Description>
     <Copyright>2015-2019 Andrey Lipatkin</Copyright>
-    <PackageLicenseExpression>https://github.com/Litee/moq.autocomplete/blob/master/LICENSE</PackageLicenseExpression>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageProjectUrl>https://github.com/Litee/moq.autocomplete</PackageProjectUrl>
     <PackageTags>moq, mock, test, autocomplete</PackageTags>
     <RepositoryUrl>https://github.com/Litee/moq.autocomplete</RepositoryUrl>
